@@ -6,7 +6,7 @@
 #    By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 10:33:46 by bedos-sa          #+#    #+#              #
-#    Updated: 2023/07/18 10:56:06 by bedos-sa         ###   ########.fr        #
+#    Updated: 2023/07/18 12:14:10 by bedos-sa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ FILES = srcs/main.c \
 		srcs/minilibx.c \
 		srcs/handles.c \
 		srcs/validation.c \
-		srcs/letters.c
+		srcs/error_characters.c \
+		srcs/error_map_name.c 
 OBJS = $(FILES:.c=.o)
 
 all: $(NAME)
@@ -31,7 +32,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	make -C $(LIBFT)
-	@$(CC) $(OBJS) $(CFLAGS) $(LIBFT)/libft.a -o $(NAME) $(XFLAGS)
+	$(CC) $(OBJS) $(CFLAGS) $(LIBFT)/libft.a -o $(NAME) $(XFLAGS)
 
 bonus: all
 

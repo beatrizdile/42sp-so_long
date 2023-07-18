@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   letters.c                                          :+:      :+:    :+:   */
+/*   error_characters.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 10:55:17 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/18 10:55:41 by bedos-sa         ###   ########.fr       */
+/*   Created: 2023/07/18 12:10:29 by bedos-sa          #+#    #+#             */
+/*   Updated: 2023/07/18 12:11:42 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	lttr_checks(t_map *map)
+void	chrs_checks(t_map *map)
 {
 	int		collect;
 	int		exited;
@@ -38,10 +38,10 @@ void	lttr_checks(t_map *map)
 		}
 		i++;
 	}
-	lttr_error(exited, player, collect, map);
+	chr_error(exited, player, collect, map);
 }
 
-void	lttr_error(int exited, int player, int collect, t_map *map)
+void	chr_error(int exited, int player, int collect, t_map *map)
 {
 	if (exited == 0)
 	{
@@ -61,10 +61,10 @@ void	lttr_error(int exited, int player, int collect, t_map *map)
 		free_maps(map);
 		exit(1);
 	}
-	lttr_error_two(player, map);
+	chr_error_two(player, map);
 }
 
-void	lttr_error_two(int player, t_map *map)
+void	chr_error_two(int player, t_map *map)
 {
 	if (player == 0)
 	{

@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   error_map_name.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 17:10:20 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/18 12:03:34 by bedos-sa         ###   ########.fr       */
+/*   Created: 2023/07/18 11:20:34 by bedos-sa          #+#    #+#             */
+/*   Updated: 2023/07/18 12:23:07 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char **argv)
+void	valid_map_name(t_map *map)
 {
-	t_data	data;
-	t_map	map;
+	int len;
+	int flag;
 
-	if (argc != 2)
+	flag = 0;
+	len = ft_strlen(map->file);
+	if (len >= 5)
+	{
+		if (map->file[len - 1] == 'r' && map->file[len - 2] == 'e' && map->file[len
+			- 3] == 'b' && map->file[len - 4] == '.' && map->file[len - 5] != '.')
+			flag = 1;
+	}
+	if (flag != 1)
+	{
+		ft_printf("Error in map validation: invalid map name.\n");
+		free_maps(map);
 		exit(1);
-	data.map = &map;
-	map.file = argv[1];
-	get_map(&map);
-	valid_map(&map);
-	init_libx(&data, &map);
-	get_images(&map, &data);
-	hooks(&data);
-	return (0);
+	}
 }

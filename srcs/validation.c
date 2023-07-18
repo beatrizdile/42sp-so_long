@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 16:37:00 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/18 10:55:35 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/18 12:13:32 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,9 @@
 
 void	valid_map(t_map	*map)
 {
-	lttr_checks(map);
+	valid_map_name(map);
+	chrs_checks(map);
 }
-
-
-
-// If there is 1 starting position
-
-// If there is 1 exit
-
-// If there is 1 collectible
 
 // If the name of the map is valid
 
