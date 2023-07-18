@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 16:03:52 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/17 17:26:54 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/18 17:17:58 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	get_map(t_map *map)
 	j = 0;
 	map->m_lines = 0;
 	fd = open(map->file, O_RDONLY);
+	no_file(fd);
 	while (1)
 	{
 		str = get_next_line(fd);

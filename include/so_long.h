@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 10:37:48 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/18 12:13:02 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/18 16:50:45 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,15 @@ void		free_for_finish(t_data *data);
 int			handle_no_event(void *data);
 int			handle_keypress(int keysym, t_data *data);
 int			handle_x_press(t_data *data);
-void		free_maps(t_map	*map);
-void		free_images(t_data	*data);
-void		valid_map(t_map	*map);
+void		free_maps(t_map *map);
+void		free_images(t_data *data);
+void		valid_map(t_map *map);
 void		chrs_checks(t_map *map);
-void		chr_error(int	exited, int	player, int	collect, t_map	*map);
-void		chr_error_two(int	player, t_map	*map);
-void		valid_map_name(t_map	*map);
+void		chr_error(int exited, int player, int collect, t_map *map);
+void		chr_error_two(int player, t_map *map);
+void		name_check(t_map *map);
+void		no_file(int	fd);
+void		wall_check(t_map *map);
+void		wall_error(t_map *map);
 
 #endif
