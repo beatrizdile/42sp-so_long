@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 10:37:48 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/18 16:50:45 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/19 18:47:57 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,9 @@ typedef struct s_map
 	void	*img6;
 	char	*file;
 	char	**m_str;
+	char	**c_str;
 	int		m_lines;
-	size_t	m_rows;
+	int		m_rows;
 	int		x;
 	int		y;
 }			t_map;
@@ -71,5 +72,14 @@ void		name_check(t_map *map);
 void		no_file(int	fd);
 void		wall_check(t_map *map);
 void		wall_error(t_map *map);
+void		invalid_chrs_check(t_map *map);
+void		invalid_chrs_error(t_map *map);
+void		size_check(t_map *map);
+void		size_error(t_map *map);
+void		flood_fill(t_map *map);
+void		fill(t_map *map, int x, int y);
+void		map_dup(t_map *map);
+void		path_error(t_map *map, int flag);
+void		path_check(t_map *map);
 
 #endif

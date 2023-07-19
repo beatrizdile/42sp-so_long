@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 12:10:29 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/18 16:50:41 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/19 16:26:25 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	chrs_checks(t_map *map)
 {
-	int		collect;
-	int		exited;
-	int		player;
-	int		i;
-	size_t	j;
+	int	collect;
+	int	exited;
+	int	player;
+	int	i;
+	int	j;
 
 	i = 0;
 	collect = 0;
@@ -62,6 +62,7 @@ void	chr_error(int exited, int player, int collect, t_map *map)
 		exit(1);
 	}
 	chr_error_two(player, map);
+	invalid_chrs_check(map);
 }
 
 void	chr_error_two(int player, t_map *map)
@@ -85,7 +86,7 @@ void	wall_check(t_map *map)
 	int	i;
 
 	i = 0;
-	while (i < (int)map->m_rows)
+	while (i < map->m_rows)
 	{
 		if (map->m_str[0][i] != '1')
 			wall_error(map);

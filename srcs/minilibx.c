@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 16:03:52 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/18 17:17:58 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/19 16:51:15 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	get_map(t_map *map)
 		if (str == NULL)
 			break ;
 		map->m_lines++;
-		map->m_rows = ft_strlen(str);
 		free(str);
 	}
 	close(fd);
@@ -57,6 +56,7 @@ void	get_map(t_map *map)
 	str = get_next_line(fd);
 	free(str);
 	close(fd);
+	map->m_rows = (int)ft_strlen(map->m_str[0]) - 1;
 }
 
 int	get_images(t_map *map, t_data *data)
@@ -77,8 +77,8 @@ int	get_images(t_map *map, t_data *data)
 
 void	put_images(t_map *map, t_data *data)
 {
-	int		i;
-	size_t	j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < map->m_lines)
