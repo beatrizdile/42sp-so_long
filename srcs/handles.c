@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:05:57 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/19 16:50:36 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/20 11:51:31 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	handle_keypress(int keysym, t_data *data)
 		ft_printf("Game closed.\n");
 		free_for_finish(data);
 	}
+	else if (keysym == 119 || keysym == 97 || keysym == 115 || keysym == 100)
+		movement_check(keysym, data);
 	ft_printf("Keypress: %d\n", keysym);
 	return (1);
 }

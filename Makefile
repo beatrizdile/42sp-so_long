@@ -6,7 +6,7 @@
 #    By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 10:33:46 by bedos-sa          #+#    #+#              #
-#    Updated: 2023/07/19 18:12:53 by bedos-sa         ###   ########.fr        #
+#    Updated: 2023/07/20 11:39:29 by bedos-sa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ FILES = srcs/main.c \
 		srcs/error_characters.c \
 		srcs/error_map_name.c \
 		srcs/error_rectangular.c \
-		srcs/error_map_path.c
+		srcs/error_map_path.c \
+		srcs/keypress.c
 OBJS = $(FILES:.c=.o)
 
 all: $(NAME)

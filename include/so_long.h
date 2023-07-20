@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 10:37:48 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/19 18:47:57 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/20 16:59:51 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <X11/keysym.h>
 # include <fcntl.h>
 # include <mlx.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -31,19 +30,22 @@
 
 typedef struct s_map
 {
+	char	**m_str;
+	char	**c_str;
+	int		m_lines;
+	int		m_rows;
+	char	*file;
+	int		moves;
+	int		p_x;
+	int		p_y;
+	int		x;
+	int		y;
 	void	*img1;
 	void	*img2;
 	void	*img3;
 	void	*img4;
 	void	*img5;
 	void	*img6;
-	char	*file;
-	char	**m_str;
-	char	**c_str;
-	int		m_lines;
-	int		m_rows;
-	int		x;
-	int		y;
 }			t_map;
 
 typedef struct s_data
@@ -81,5 +83,8 @@ void		fill(t_map *map, int x, int y);
 void		map_dup(t_map *map);
 void		path_error(t_map *map, int flag);
 void		path_check(t_map *map);
+void		movement_check(int keysym, t_data *data);
+void		find_player(t_data *data);
+void		new_frame(t_data *data, int x, int y, int i, int j);
 
 #endif

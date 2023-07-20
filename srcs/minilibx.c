@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 16:03:52 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/19 16:51:15 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/20 16:46:43 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	get_map(t_map *map)
 
 int	get_images(t_map *map, t_data *data)
 {
+	map->moves = 0;
 	map->img1 = mlx_xpm_file_to_image(data->mlx_ptr, FLOOR, &map->x, &map->y);
 	map->img2 = mlx_xpm_file_to_image(data->mlx_ptr, JAMES, &map->x, &map->y);
 	map->img3 = mlx_xpm_file_to_image(data->mlx_ptr, PIKACHU, &map->x, &map->y);
