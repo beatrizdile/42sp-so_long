@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 10:37:48 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/20 16:59:51 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/20 18:59:48 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,9 @@ void		fill(t_map *map, int x, int y);
 void		map_dup(t_map *map);
 void		path_error(t_map *map, int flag);
 void		path_check(t_map *map);
-void		movement_check(int keysym, t_data *data);
-void		find_player(t_data *data);
+void		movement_check(int keysym, t_data *data, t_map *map);
+int			find_chr(t_map *map, char	ch);
 void		new_frame(t_data *data, int x, int y, int i, int j);
+void		exit_check(t_data *data, t_map *map);
 
 #endif

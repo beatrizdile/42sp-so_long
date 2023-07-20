@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:10:20 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/20 11:18:10 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/20 18:37:28 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,5 @@ int	main(int argc, char **argv)
 }
 
 // add pause/help button
+// death animation
+// game over on screen
