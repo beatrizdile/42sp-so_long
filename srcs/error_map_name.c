@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 11:20:34 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/18 16:20:47 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/24 10:34:35 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	name_check(t_map *map)
 	}
 }
 
-void	no_file(int	fd)
+void	no_file(int fd)
 {
 	if (fd == -1)
 	{

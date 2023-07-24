@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 18:04:18 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/21 11:55:58 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/24 10:47:47 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	fill(t_map *map, int x, int y)
 
 void	map_dup(t_map *map)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	map->c_chrs = ft_calloc(sizeof(char *), map->m_lines);
