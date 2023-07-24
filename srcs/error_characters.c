@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 12:10:29 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/19 16:26:25 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/21 11:55:41 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ void	chrs_checks(t_map *map)
 	while (i < map->m_lines)
 	{
 		j = 0;
-		while (j++ < map->m_rows)
+		while (j++ < map->m_columns)
 		{
-			if (map->m_str[i][j] == 'E')
+			if (map->m_chrs[i][j] == 'E')
 				exited++;
-			else if (map->m_str[i][j] == 'P')
+			else if (map->m_chrs[i][j] == 'P')
 				player++;
-			else if (map->m_str[i][j] == 'C')
+			else if (map->m_chrs[i][j] == 'C')
 				collect++;
 		}
 		i++;
@@ -86,20 +86,20 @@ void	wall_check(t_map *map)
 	int	i;
 
 	i = 0;
-	while (i < map->m_rows)
+	while (i < map->m_columns)
 	{
-		if (map->m_str[0][i] != '1')
+		if (map->m_chrs[0][i] != '1')
 			wall_error(map);
-		if (map->m_str[map->m_lines - 1][i] != '1')
+		if (map->m_chrs[map->m_lines - 1][i] != '1')
 			wall_error(map);
 		i++;
 	}
 	i = 0;
 	while (i < map->m_lines)
 	{
-		if (map->m_str[i][0] != '1')
+		if (map->m_chrs[i][0] != '1')
 			wall_error(map);
-		if (map->m_str[i][map->m_rows - 1] != '1')
+		if (map->m_chrs[i][map->m_columns - 1] != '1')
 			wall_error(map);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 10:37:48 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/20 18:59:48 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/21 16:27:55 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,27 +30,34 @@
 
 typedef struct s_map
 {
-	char	**m_str;
-	char	**c_str;
-	int		m_lines;
-	int		m_rows;
+	char	**m_chrs;
+	char	**c_chrs;
 	char	*file;
+	int		player_x;
+	int		player_y;
+	int		exit_x;
+	int		exit_y;
+	int		m_columns;
+	int		m_lines;
 	int		moves;
-	int		p_x;
-	int		p_y;
-	int		x;
-	int		y;
+}			t_map;
+
+typedef struct s_img
+{
 	void	*img1;
 	void	*img2;
 	void	*img3;
 	void	*img4;
 	void	*img5;
 	void	*img6;
-}			t_map;
+	int		x;
+	int		y;
+}			t_img;
 
 typedef struct s_data
 {
 	t_map	*map;
+	t_img	*img;
 	void	*mlx_ptr;
 	void	*win_ptr;
 }			t_data;
@@ -71,7 +78,7 @@ void		chrs_checks(t_map *map);
 void		chr_error(int exited, int player, int collect, t_map *map);
 void		chr_error_two(int player, t_map *map);
 void		name_check(t_map *map);
-void		no_file(int	fd);
+void		no_file(int fd);
 void		wall_check(t_map *map);
 void		wall_error(t_map *map);
 void		invalid_chrs_check(t_map *map);
@@ -84,8 +91,8 @@ void		map_dup(t_map *map);
 void		path_error(t_map *map, int flag);
 void		path_check(t_map *map);
 void		movement_check(int keysym, t_data *data, t_map *map);
-int			find_chr(t_map *map, char	ch);
+int			find_chr(t_map *map, char ch);
 void		new_frame(t_data *data, int x, int y, int i, int j);
-void		exit_check(t_data *data, t_map *map);
+void		exit_check(t_map *map);
 
 #endif

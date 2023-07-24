@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 18:04:18 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/19 18:40:22 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/21 11:55:58 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	flood_fill(t_map *map)
 	while (x < map->m_lines)
 	{
 		y = 0;
-		while (y < map->m_rows)
+		while (y < map->m_columns)
 		{
-			if (map->c_str[x][y] == 'P')
+			if (map->c_chrs[x][y] == 'P')
 				fill(map, x, y);
 			y++;
 		}
@@ -42,9 +42,9 @@ void	path_check(t_map *map)
 	while (i < map->m_lines)
 	{
 		j = 0;
-		while (j < map->m_rows)
+		while (j < map->m_columns)
 		{
-			if (map->c_str[i][j] == 'E' || map->c_str[i][j] == 'C')
+			if (map->c_chrs[i][j] == 'E' || map->c_chrs[i][j] == 'C')
 				path_error(map, 1);
 			j++;
 		}
@@ -63,10 +63,10 @@ void	path_error(t_map *map, int flag)
 		ft_printf("Error in map validation: invalid path.\n");
 		while (i < map->m_lines)
 		{
-			free(map->c_str[i]);
+			free(map->c_chrs[i]);
 			i++;
 		}
-		free(map->c_str);
+		free(map->c_chrs);
 		free_maps(map);
 		exit(1);
 	}
@@ -75,20 +75,20 @@ void	path_error(t_map *map, int flag)
 		i = 0;
 		while (i < map->m_lines)
 		{
-			free(map->c_str[i]);
+			free(map->c_chrs[i]);
 			i++;
 		}
-		free(map->c_str);
+		free(map->c_chrs);
 	}
 }
 
 void	fill(t_map *map, int x, int y)
 {
-	if (y < 0 || y > map->m_rows || x < 0 || x >= map->m_lines
-		|| (map->c_str[x][y] != '0' && map->c_str[x][y] != 'P'
-			&& map->c_str[x][y] != 'C' && map->c_str[x][y] != 'E'))
+	if (y < 0 || y > map->m_columns || x < 0 || x >= map->m_lines
+		|| (map->c_chrs[x][y] != '0' && map->c_chrs[x][y] != 'P'
+			&& map->c_chrs[x][y] != 'C' && map->c_chrs[x][y] != 'E'))
 		return ;
-	map->c_str[x][y] = '1';
+	map->c_chrs[x][y] = '1';
 	fill(map, x - 1, y);
 	fill(map, x, y - 1);
 	fill(map, x + 1, y);
@@ -100,10 +100,10 @@ void	map_dup(t_map *map)
 	int i;
 
 	i = 0;
-	map->c_str = ft_calloc(sizeof(char *), map->m_lines);
+	map->c_chrs = ft_calloc(sizeof(char *), map->m_lines);
 	while (i < map->m_lines)
 	{
-		map->c_str[i] = ft_strdup(map->m_str[i]);
+		map->c_chrs[i] = ft_strdup(map->m_chrs[i]);
 		i++;
 	}
 }

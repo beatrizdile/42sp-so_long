@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 16:37:00 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/20 10:31:48 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/21 16:45:00 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,12 @@ void	valid_map(t_map	*map)
 	flood_fill(map);
 }
 
-// If the name of the map is valid
-// um arquivo apenas .ber - n valido
-// Your program has to take as parameter a map description file ending with the .ber
-//extension.
-//If the map contains a duplicates characters (exit/start), you should
-//display an error message.
-//The map must be closed/surrounded by walls. If it’s not, the program must return
-//an error.
-//The map must be rectangular.
-//You have to check if there’s a valid path in the map.
-//Possible collect all items.
-
-//You must be able to parse any kind of map, as long as it respects the above rules.
+void	free_for_finish(t_data *data)
+{
+	free_images(data);
+	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+	mlx_destroy_display(data->mlx_ptr);
+	free_maps(data->map);
+	free(data->mlx_ptr);
+	exit(1);
+}
