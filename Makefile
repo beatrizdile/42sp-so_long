@@ -6,7 +6,7 @@
 #    By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 10:33:46 by bedos-sa          #+#    #+#              #
-#    Updated: 2023/07/20 11:39:29 by bedos-sa         ###   ########.fr        #
+#    Updated: 2023/07/24 20:24:12 by bedos-sa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ OBJS = $(FILES:.c=.o)
 all: $(NAME)
 	@echo "SUCCESS!"
 
-%.o: %.c
+%.o: %.c include/so_long.h
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 10:37:48 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/24 15:48:38 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/24 20:59:12 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define FLOOR "sprites/floor_64.xpm"
-# define JAMES "sprites/james_64.xpm"
-# define PIKACHU "sprites/pikachu_d1_64.xpm"
-# define POKEBALL "sprites/pokeball_64.xpm"
-# define STAIR "sprites/stair_64.xpm"
-# define STONE "sprites/stone_64.xpm"
+# define FLOOR "sprites/floor_desert_2_64.xpm"
+# define MONSTER "sprites/monster_64.xpm"
+# define COWBOY "sprites/cowboy_front_64.xpm"
+# define HEART "sprites/heart_64.xpm"
+# define STAR "sprites/star_64.xpm"
+# define CACTUS "sprites/cactus_64.xpm"
 
 typedef struct s_frame
 {

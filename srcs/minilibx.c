@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 16:03:52 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/24 14:31:28 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/24 20:25:23 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,15 @@ int	get_images(t_map *map, t_data *data)
 	map->moves = 0;
 	data->img->img1 = mlx_xpm_file_to_image(data->mlx_ptr, FLOOR, &data->img->x,
 			&data->img->y);
-	data->img->img2 = mlx_xpm_file_to_image(data->mlx_ptr, JAMES, &data->img->x,
+	data->img->img2 = mlx_xpm_file_to_image(data->mlx_ptr, MONSTER, &data->img->x,
 			&data->img->y);
-	data->img->img3 = mlx_xpm_file_to_image(data->mlx_ptr, PIKACHU,
+	data->img->img3 = mlx_xpm_file_to_image(data->mlx_ptr, COWBOY,
 			&data->img->x, &data->img->y);
-	data->img->img4 = mlx_xpm_file_to_image(data->mlx_ptr, POKEBALL,
+	data->img->img4 = mlx_xpm_file_to_image(data->mlx_ptr, HEART,
 			&data->img->x, &data->img->y);
-	data->img->img5 = mlx_xpm_file_to_image(data->mlx_ptr, STAIR, &data->img->x,
+	data->img->img5 = mlx_xpm_file_to_image(data->mlx_ptr, STAR, &data->img->x,
 			&data->img->y);
-	data->img->img6 = mlx_xpm_file_to_image(data->mlx_ptr, STONE, &data->img->x,
+	data->img->img6 = mlx_xpm_file_to_image(data->mlx_ptr, CACTUS, &data->img->x,
 			&data->img->y);
 	if (data->img->img1 == NULL || data->img->img2 == NULL
 		|| data->img->img3 == NULL || data->img->img4 == NULL
