@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:05:57 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/24 10:27:32 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/25 15:21:59 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,8 @@ void	free_images(t_data *data)
 	mlx_destroy_image(data->mlx_ptr, data->img->img4);
 	mlx_destroy_image(data->mlx_ptr, data->img->img5);
 	mlx_destroy_image(data->mlx_ptr, data->img->img6);
+	mlx_destroy_image(data->mlx_ptr, data->img->img7);
+	mlx_destroy_image(data->mlx_ptr, data->img->img8);
+	mlx_destroy_image(data->mlx_ptr, data->img->img9);
+	mlx_destroy_image(data->mlx_ptr, data->img->img10);
 }

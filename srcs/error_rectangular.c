@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 17:31:29 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/21 16:37:16 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/25 16:25:47 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,16 @@ void	invalid_chrs_check(t_map *map)
 		}
 		i++;
 	}
+}
+
+void	get_other_images(t_data *data)
+{
+	data->img->img7 = mlx_xpm_file_to_image(data->mlx_ptr, COWBOY_FORWARD,
+			&data->img->x, &data->img->y);
+	data->img->img8 = mlx_xpm_file_to_image(data->mlx_ptr, COWBOY_BACK,
+			&data->img->x, &data->img->y);
+	data->img->img9 = mlx_xpm_file_to_image(data->mlx_ptr, COWBOY_LEFT,
+			&data->img->x, &data->img->y);
+	data->img->img10 = mlx_xpm_file_to_image(data->mlx_ptr, COWBOY_RIGHT,
+			&data->img->x, &data->img->y);
 }

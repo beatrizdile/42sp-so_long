@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 11:27:33 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/24 15:45:07 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/25 15:37:18 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	movement_check(int keysym, t_data *data, t_map *map)
 {
 	t_frame	frame;
 
-	find_chr(map, 'P');
+	find_player(map);
 	frame.x = map->player_x;
 	frame.y = map->player_y;
 	frame.i = map->player_x;
@@ -46,8 +46,9 @@ void	new_frame(t_data *data, t_frame *frame)
 			ft_printf("You Win.\n");
 		free_for_finish(data);
 	}
+	player_sides(data, frame);
 	data->map->m_chrs[frame->x][frame->y] = '0';
-	data->map->m_chrs[frame->i][frame->j] = 'P';
+	data->map->m_chrs[frame->i][frame->j] = data->map->player_side;
 	put_images(data->map, data);
 }
 
@@ -64,11 +65,6 @@ int	find_chr(t_map *map, char ch)
 		j = 0;
 		while (j < map->m_columns)
 		{
-			if (map->m_chrs[i][j] == ch && ch == 'P')
-			{
-				map->player_x = i;
-				map->player_y = j;
-			}
 			if (map->m_chrs[i][j] == ch)
 				flag++;
 			j++;
@@ -76,4 +72,44 @@ int	find_chr(t_map *map, char ch)
 		i++;
 	}
 	return (flag);
+}
+
+void	player_sides(t_data *data, t_frame *frame)
+{
+	char	ch;
+
+	if (frame->x < frame->i)
+		ch = 'F';
+	if (frame->y < frame->j)
+		ch = 'R';
+	if (frame->x > frame->i)
+		ch = 'B';
+	if (frame->y > frame->j)
+		ch = 'L';
+	data->map->player_side = ch;
+}
+
+void	find_player(t_map *map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < map->m_lines)
+	{
+		j = 0;
+		while (j < map->m_columns)
+		{
+			if (map->m_chrs[i][j] == 'P' || map->m_chrs[i][j] == 'B'
+				|| map->m_chrs[i][j] == 'F' || map->m_chrs[i][j] == 'L'
+				|| map->m_chrs[i][j] == 'R')
+			{
+				map->player_x = i;
+				map->player_y = j;
+				return ;
+			}
+			j++;
+		}
+		i++;
+	}
 }
