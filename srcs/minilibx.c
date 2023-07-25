@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 16:03:52 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/24 20:25:23 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/25 08:17:36 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,16 @@ int	get_images(t_map *map, t_data *data)
 	map->moves = 0;
 	data->img->img1 = mlx_xpm_file_to_image(data->mlx_ptr, FLOOR, &data->img->x,
 			&data->img->y);
-	data->img->img2 = mlx_xpm_file_to_image(data->mlx_ptr, MONSTER, &data->img->x,
-			&data->img->y);
+	data->img->img2 = mlx_xpm_file_to_image(data->mlx_ptr, MONSTER,
+			&data->img->x, &data->img->y);
 	data->img->img3 = mlx_xpm_file_to_image(data->mlx_ptr, COWBOY,
 			&data->img->x, &data->img->y);
-	data->img->img4 = mlx_xpm_file_to_image(data->mlx_ptr, HEART,
-			&data->img->x, &data->img->y);
+	data->img->img4 = mlx_xpm_file_to_image(data->mlx_ptr, HEART, &data->img->x,
+			&data->img->y);
 	data->img->img5 = mlx_xpm_file_to_image(data->mlx_ptr, STAR, &data->img->x,
 			&data->img->y);
-	data->img->img6 = mlx_xpm_file_to_image(data->mlx_ptr, CACTUS, &data->img->x,
-			&data->img->y);
+	data->img->img6 = mlx_xpm_file_to_image(data->mlx_ptr, CACTUS,
+			&data->img->x, &data->img->y);
 	if (data->img->img1 == NULL || data->img->img2 == NULL
 		|| data->img->img3 == NULL || data->img->img4 == NULL
 		|| data->img->img5 == NULL || data->img->img6 == NULL)
@@ -78,23 +78,23 @@ void	put_images(t_map *map, t_data *data)
 void	mlx_put_images(t_map *map, t_data *data, int i, int j)
 {
 	if (map->m_chrs[i][j] == '0')
-		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img->img1,
-			(64 * j), (64 * i));
+		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img->img1, \
+				(64 * j), (64 * i));
 	else if (map->m_chrs[i][j] == '1')
-		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img->img6,
-			(64 * j), (64 * i));
+		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img->img6, \
+				(64 * j), (64 * i));
 	else if (map->m_chrs[i][j] == 'C')
-		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img->img4,
-			(64 * j), (64 * i));
+		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img->img4, \
+				(64 * j), (64 * i));
 	else if (map->m_chrs[i][j] == 'E')
-		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img->img5,
-			(64 * j), (64 * i));
+		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img->img5, \
+				(64 * j), (64 * i));
 	else if (map->m_chrs[i][j] == 'P')
-		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img->img3,
-			(64 * j), (64 * i));
+		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img->img3, \
+				(64 * j), (64 * i));
 	else if (map->m_chrs[i][j] == 'X')
-		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img->img2,
-			(64 * j), (64 * i));
+		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img->img2, \
+				(64 * j), (64 * i));
 }
 
 void	hooks(t_data *data)
