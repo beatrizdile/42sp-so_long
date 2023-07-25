@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 11:20:34 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/24 10:34:35 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/25 11:21:15 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,23 @@ void	name_check(t_map *map)
 	}
 }
 
-void	no_file(int fd)
+void	no_file(int fd, t_map *map)
 {
+	int		byte;
+	char	str[1];
+
 	if (fd == -1)
 	{
 		ft_printf("Error in map validation: invalid map file.\n");
 		exit(1);
 	}
+	byte = read(fd, str, 1);
+	if (byte != 1)
+	{
+		close(fd);
+		ft_printf("Error in map validation: empty map.\n");
+		exit(1);
+	}
+	close(fd);
+	fd = open(map->file, O_RDONLY);
 }

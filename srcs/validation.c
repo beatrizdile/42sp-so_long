@@ -6,13 +6,13 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 16:37:00 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/24 15:11:34 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/25 11:20:05 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	valid_map(t_map	*map)
+void	valid_map(t_map *map)
 {
 	name_check(map);
 	size_check(map);
@@ -40,7 +40,7 @@ void	get_map(t_map *map)
 	j = 0;
 	map->m_lines = 0;
 	fd = open(map->file, O_RDONLY);
-	no_file(fd);
+	no_file(fd, map);
 	while (1)
 	{
 		str = get_next_line(fd);
@@ -80,8 +80,8 @@ void	exit_check(t_map *map)
 		}
 		i++;
 	}
-	if (find_chr(map, 'C') && (map->player_x != map->exit_x \
-		|| map->player_y != map->exit_y))
+	if (find_chr(map, 'C') && (map->player_x != map->exit_x
+			|| map->player_y != map->exit_y))
 		map->m_chrs[map->exit_x][map->exit_y] = '0';
 	if (!find_chr(map, 'C'))
 		map->m_chrs[map->exit_x][map->exit_y] = 'E';

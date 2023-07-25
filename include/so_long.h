@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 10:37:48 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/25 09:23:25 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/25 11:20:08 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void				chrs_checks(t_map *map);
 void				chr_error(int exited, int player, int collect, t_map *map);
 void				chr_error_two(int player, t_map *map);
 void				name_check(t_map *map);
-void				no_file(int fd);
+void				no_file(int fd, t_map *map);
 void				wall_check(t_map *map);
 void				wall_error(t_map *map);
 void				invalid_chrs_check(t_map *map);
