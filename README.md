@@ -13,9 +13,9 @@
 
 ## Description
 
-The primary objective of the so_long project is to develop a simple 2D game with specific rules and functionalities. The project aims to reinforce various programming concepts, including file handling, graphics rendering, and user input processing. It also provides a practical application for students to showcase their understanding of C programming and basic game development principles.
+The primary objective of the **so_long** project is to develop a simple 2D game with specific rules and functionalities. The project aims to reinforce various programming concepts, including file handling, graphics rendering, and user input processing. It also provides a practical application for students to showcase their understanding of C programming and basic game development principles.
 
-Completing the so_long project is not only a valuable learning experience but also an opportunity for students to showcase their coding skills and creativity in designing and developing a simple game from scratch using C.
+Completing the **so_long** project is not only a valuable learning experience but also an opportunity for students to showcase their coding skills and creativity in designing and developing a simple game from scratch using C.
 
 ## Installation
 
@@ -87,21 +87,3 @@ Example of valid map:
 ## Resources
 
 - [minilibx](https://github.com/42Paris/minilibx-linux) - The minimal X-Window library used for graphics and inputs.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
