@@ -52,11 +52,11 @@ You can replace **maps/map1.ber** with any valid map file of your choice. The ga
 
 Use the following controls to navigate the player character:
 
-- W or Up Arrow: Move the player up.
-- S or Down Arrow: Move the player down.
-- A or Left Arrow: Move the player left.
-- D or Right Arrow: Move the player right.
-- ESC or Cross Button (X): Close the game.
+- **W** or Up Arrow: Move the player up.
+- **S** or Down Arrow: Move the player down.
+- **A** or Left Arrow: Move the player left.
+- **D** or Right Arrow: Move the player right.
+- **ESC** or Cross Button (X): Close the game.
 
 ## Map Format
 
