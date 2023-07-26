@@ -73,11 +73,12 @@ Maps for the game are stored in plain text files with the extension '.ber'. Each
 Example of valid map:
 
 ```text
-1111111111111
-10X00000000C1
-1000011111001
-1P0011E0000X1
-1111111111111
+111111111111
+10X0000000C1
+100001110001
+100011000001
+1P011E0000X1
+111111111111
 ```
 
 ## Resources
