@@ -20,7 +20,7 @@ Before proceeding with the installation, make sure you have the following depend
 
 - GCC (GNU Compiler Collection)
 - X11 libraries and development headers
-- Minilibx
+- Minilibx a simple X-Window (X11R6)
 - CMake (optional)
 
 Follow the steps below to install and run the game:
