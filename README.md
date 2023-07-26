@@ -70,12 +70,14 @@ Maps for the game are stored in plain text files with the extension '.ber'. Each
 - **E**: Exit door
 - **X**: Enemy spawn position (optional)
 
-Example valid map:
+Example of valid map:
 
 ```text
-1111111
-1P0C0E1
-1111111
+1111111111111
+10X00000000C1
+1000011111001
+1P0011E0000X1
+1111111111111
 ```
 
 ## Resources
