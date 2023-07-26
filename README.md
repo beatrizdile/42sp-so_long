@@ -40,7 +40,7 @@ make
 ./so_long maps/map1.ber
 ```
 
-You can replace maps/map1.ber with any valid map file of your choice. The game will load the specified map, and you can start playing.
+You can replace **maps/map1.ber** with any valid map file of your choice. The game will load the specified map, and you can start playing.
 
 ### Game Rules
 - The player starts at the player spawn position ('P') and has to collect all the collectibles ('C') on the map.
