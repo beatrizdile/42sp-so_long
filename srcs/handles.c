@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:05:57 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/25 15:21:59 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/26 14:39:57 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,15 @@ int	handle_no_event(void *data)
 
 int	handle_keypress(int keysym, t_data *data)
 {
+	ft_printf("key: %d\n", keysym);
 	if (keysym == XK_Escape)
 	{
 		ft_printf("Game closed.\n");
 		free_for_finish(data);
 	}
-	else if (keysym == 119 || keysym == 97 || keysym == 115 || keysym == 100)
+	else if (keysym == 119 || keysym == 97 || keysym == 115 || keysym == 100
+		|| keysym == 65362 || keysym == 65361 || keysym == 65364
+		|| keysym == 65363)
 		movement_check(keysym, data, data->map);
 	return (1);
 }

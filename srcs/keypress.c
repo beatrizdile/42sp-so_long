@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 11:27:33 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/25 15:37:18 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/07/26 14:42:39 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,17 @@ void	movement_check(int keysym, t_data *data, t_map *map)
 	frame.y = map->player_y;
 	frame.i = map->player_x;
 	frame.j = map->player_y;
-	if (keysym == 119 && map->m_chrs[frame.x - 1][frame.y] != '1')
+	if ((keysym == 119 || keysym == 65362) && (map->m_chrs[frame.x
+				- 1][frame.y] != '1'))
 		frame.i -= 1;
-	else if (keysym == 97 && map->m_chrs[frame.x][frame.y - 1] != '1')
+	else if ((keysym == 97 || keysym == 65361) && (map->m_chrs[frame.x][frame.y
+			- 1] != '1'))
 		frame.j -= 1;
-	else if (keysym == 115 && map->m_chrs[frame.x + 1][frame.y] != '1')
+	else if ((keysym == 115 || keysym == 65364) && (map->m_chrs[frame.x
+				+ 1][frame.y] != '1'))
 		frame.i += 1;
-	else if (keysym == 100 && map->m_chrs[frame.x][frame.y + 1] != '1')
+	else if ((keysym == 100 || keysym == 65363) && (map->m_chrs[frame.x][frame.y
+			+ 1] != '1'))
 		frame.j += 1;
 	if (frame.i != map->player_x || frame.j != map->player_y)
 		new_frame(data, &frame);
