@@ -6,7 +6,7 @@
 /*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:05:57 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/26 14:39:57 by bedos-sa         ###   ########.fr       */
+/*   Updated: 2023/08/02 10:33:23 by bedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	handle_no_event(void *data)
 
 int	handle_keypress(int keysym, t_data *data)
 {
-	ft_printf("key: %d\n", keysym);
 	if (keysym == XK_Escape)
 	{
 		ft_printf("Game closed.\n");
