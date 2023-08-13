@@ -11,7 +11,10 @@
 
 **so_long** is a simple 2D game project developed in C as part of the curriculum. The objective of the game is to collect all the collectibles (items) on the map and reach the exit door while avoiding obstacles and enemies. The game uses the **minilibx** (a minimal X-Window library) to handle graphics and inputs.
 
-## Description
+[Screenshot from 2023-08-13 19-24-03](https://github.com/beatrizdile/42sp-so_long/assets/102201035/e6ef5d63-c3bc-47c0-bb6c-2d6e8eeed7bc)
+
+## Description!
+
 
 The primary objective of the **so_long** project is to develop a simple 2D game with specific rules and functionalities. The project aims to reinforce various programming concepts, including file handling, graphics rendering, and user input processing. It also provides a practical application for students to showcase their understanding of C programming and basic game development principles.
 
