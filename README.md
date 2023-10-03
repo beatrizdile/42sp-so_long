@@ -6,7 +6,7 @@
 </h2>
 <h2 align=center>
 
-  ![so_long Logo](https://game.42sp.org.br/static/assets/achievements/so_longm.png)
+  ![so_long Logo](https://github.com/beatrizdile/beatrizdile-utils/blob/master/so_longm.png)
 </h2>
 
 **so_long** is a simple 2D game project developed in C as part of the curriculum. The objective of the game is to collect all the collectibles (items) on the map and reach the exit door while avoiding obstacles and enemies. The game uses the **minilibx** (a minimal X-Window library) to handle graphics and inputs.
